@@ -13,5 +13,10 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
+- (void)iterateCount;
+- (int)multiplied;
+- (float)divided;
+
+
 @end
 
