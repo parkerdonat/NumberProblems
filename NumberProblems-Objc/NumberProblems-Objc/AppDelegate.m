@@ -53,36 +53,43 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  
-    // call the self of interateCount and pass a 4 through it
+// call the self of interateCount and pass a 4 through it
     
     [self iterateCount:4];
- 
-    // How do I decrement the integer? Like this? Where?
-    int x = 10;
-    x--;
 
     return YES;
     
 }
 
-// at the top of class put multiple and divide
-static int multiple = 8;
-static int divide = 6
+// at the top of class put multiple and divisor
+    static int multiple = 8;
+    static int divisor = 6;
 
-- (void)iterateCount:(NSInteger) number
+- (void) iterateCount:(int)number;
 {
-    NSLog(@"Iterate %d", iterateCount);
+    int multResult = [self multiplied:number];
+    float divResult = [self divided:number];
+
+    if(number == 0){
+        NSLog(@"Iterate %d\n", number);
+    }else{
+        NSLog(@"Iterate %d\n", number);
+        NSLog(@"Multiplied %d by %d to be %d\n", number, multiple, multResult);
+        NSLog(@"Divided %d by %d to be %f\n", multResult, divisor, divResult);
+        --number;
+        [self iterateCount:number];
+    }
 }
 
-- (int)multiplied:(NSInteger *)multNumber
+- (int)multiplied:(int)firstNumber;
 {
-    NSLog(@"", );
+    int result = firstNumber *= multiple;
+    return result;
 }
 
-- (float)divided:(NSInteger *)divNumber
+- (float)divided: (int)secondNumber;
 {
-    NSLog(@"", ):
-}
+    return (float)secondNumber / (float)divisor;
 }
 
 @end;
